@@ -1,0 +1,3154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/move.js"></script>
+	<script>
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			var oKl=document.getElementById('ols');
+			var aLi=oKl.getElementsByTagName('li');
+			var oUl=document.getElementById('sls');
+			var aLiImg=oUl.getElementsByTagName('li');
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var now=0;
+			var nz=2;
+
+			oUl.style.width=aLiImg.length*aLiImg[0].offsetWidth+'px';
+
+			for(var i=0; i<aLi.length; i++){
+				aLi[i].index=i;
+				aLi[i].onmouseover=function(){
+					now=this.index;
+					
+					tab();
+				}
+			}
+
+			function tab(){
+				for(var i=0; i<aLi.length; i++){
+					aLi[i].className='';
+					
+					startMove(aLiImg[i], {opacity: 0});
+				}
+				aLi[now].className='active';
+				aLiImg[now].style.zIndex=nz++;
+				startMove(aLiImg[now], {opacity: 100});
+			}
+
+			function btn1(){
+				now--;
+				if(now==-1){
+					now=aLi.length-1;
+				}
+
+				tab();
+			}
+
+			function btn2(){
+				now++;
+				if(now==aLi.length){
+					now=0;
+				}
+
+				tab();
+			}
+
+			oBtn1.onclick=function(){
+				btn1();
+			}
+
+			oBtn2.onclick=function(){
+				btn2();
+			}
+
+			var timer=setInterval(oBtn2.onclick, 3000);
+
+
+			oBox.onmouseover=function(){
+				oBtn1.style.display='block';
+				oBtn1.style.background='rgba(0,0,0, 0.5)';
+				oBtn2.style.display='block';
+				oBtn2.style.background='rgba(0,0,0, 0.5)';
+
+				clearInterval(timer);
+			}
+			
+			oBox.onmouseout=function(){
+				oBtn1.style.display='none';
+				oBtn2.style.display='none';
+
+				timer=setInterval(oBtn2.onclick, 3000);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="jindong">
+		<div class="top">
+			<div class="top1">
+				<ul class="lef">
+					<li class-"lef1">
+						<div class="lef1-1">
+							<span class="lef1-text">北京</span>
+						</div>
+					</li>
+				</ul>
+				<ul class="rig">
+					<li class="rig2">
+						手机京东
+						<li class="spli">|</li>
+					</li>
+					<li class="rig3">
+						网站导航
+						<li class="spli">|</li>
+					</li>
+					<li class="rig3">
+						客户服务
+						<li class="spli">|</li>
+					</li>
+					<li class="rig2">
+						企业采购
+						<li class="spli">|</li>
+					</li>
+					<li class="rig2">
+						京东会员
+						<li class="spli">|</li>
+					</li>
+					<li class="rig3">
+						我的京东
+						<li class="spli">|</li>
+					</li>
+					<li class="rig2">
+						我的订单
+						<li class="spli">|</li>
+					</li>
+					<li class="rig2">
+						免费注册
+					</li>
+					<li class="rig1">
+						您好，请登录
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="w">
+				<h1 class="goudong">
+					<a href="" class="goudongxi"></a>
+				</h1>
+				<div class="seach">
+					<div class="seach-m">
+					</div>
+				</div>
+				<div class="form">
+					<input type="text" name="" id="" class="sss">
+					<span class="xjj"></span>
+					<button class="hk"></button>
+				</div>
+				<div class="dorpm">
+					<div class="cw-icon">
+						<span class="cwa">我的购物车</span>
+						<img src="img/min/000.png" alt="">
+					</div>
+				</div>
+				<div class="hotw">
+					<a href="" style="color: red">每满199-100</a>
+					<a href="">1元抵822</a>
+					<a href="">爆款5折</a>
+					<a href="">鞋包秋尚新</a>
+					<a href="">低至5折</a>
+					<a href="">玩具</a>
+					<a href="">锅巴</a>
+					<a href="">领券减188</a>
+					<a href="">羽毛球拍</a>
+				</div>
+				<div class="navt">
+					<ul>
+						<li class="flash">秒杀</li>
+						<li>优惠券</li>
+						<li>闪购</li>
+						<li>拍卖</li>
+					</ul>
+					<div class="bxx"></div>
+					<ul>
+						<li>服装城</li>
+						<li>京东超市</li>
+						<li>生鲜</li>
+						<li>全球购</li>
+					</ul>
+					<div class="bxx"></div>
+					<ul>
+						<li>京东金融</li>
+					</ul>
+				</div>
+				<div class="teas"></div>
+				<div class="erwm"></div>
+
+			</div>
+		</div>
+		<div class="fs">
+		<div class="fx">
+			<div class="f1">
+				<ul>
+					<li class="hhh">家用电器</li>
+					<li>手机/运营商/数码</li>
+					<li>电脑/办公</li>
+					<li>家居/家具/家装/厨具</li>
+					<li>男装/女装/童装/内衣</li>
+					<li>美妆个户/宠物</li>
+					<li>女鞋/箱包/钟表/珠宝</li>
+					<li>男鞋/运动/户外</li>
+					<li>汽车/汽车用品</li>
+					<li>母婴/玩具乐器</li>
+					<li>食品/酒类/生鲜/特产</li>
+					<li>礼品鲜花/农资绿植</li>
+					<li>医药保健/计生情趣</li>
+					<li>图书/音像/电子书</li>
+					<li>机票/酒店/旅游/生活</li>
+					<li>理财/众筹/白条/保险</li>
+				</ul>
+			</div>
+			<div class="f2">
+				<div id="box">
+					<div id="btn1" class="btn">
+						<img src="img/min/111.png" alt="" class="btimg">
+					</div>
+					<div id="btn2" class="btn">
+						<img src="img/min/222.png" alt="" class="btimg">
+					</div>
+					<ol id="ols">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ol>
+					<ul id="sls">
+						<li style="z-index: 1"><img src="img/big/lunb/1.jpg" alt=""></li>
+						<li><a href="http://www.baidu.com"><img src="img/big/lunb/2.jpg" alt=""></a></li>
+						<li><img src="img/big/lunb/3.jpg" alt=""></li>
+						<li><img src="img/big/lunb/4.jpg" alt=""></li>
+						<li><img src="img/big/lunb/5.jpg" alt=""></li>
+						<li><img src="img/big/lunb/6.jpg" alt=""></li>
+						<li><img src="img/big/lunb/7.jpg" alt=""></li>
+						<li><img src="img/big/lunb/8.jpg" alt=""></li>
+					</ul>
+			</div>
+				<div class="f2-2">
+					<div class="f2-2-1"></div>
+					<div class="f2-2-2"></div>
+				</div>
+			</div>
+			<div class="f3">
+				<div class="make">
+					<div class="make1">
+						<div class="make1-1"><img src="img/big/huantou.jpg" alt=""></div>
+						<div class="make1-2">
+							<p>hi , 吴彦祖</p>
+							<p>登陆 注册</p>
+						</div>
+					</div>
+					<div class="make2">
+						<a href="">新人福利</a>
+						<a href="">PLUS会员</a>
+					</div>
+				</div>
+				<div class="some">
+					<div class="some1">
+						<div class="some2">
+							<a href="" class="some2-1">促销</a>
+							<div class="somesp"></div>
+							<a href="" class="some2-2">公告</a>
+							<a href="" class="some2-3">更多</a>
+						</div>
+						<div class="some3">
+							<div class="some3-1">
+								<ul>
+									<li>精品百货节1元限时抢</li>
+									<li>家电周年庆，低至五折抢好礼</li>
+									<li>[爆款]1元可抵822元</li>
+									<li>每日享折扣 京东品质游</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="noise">
+					<div class="noise1">
+						<ul class="noise2">
+							<li class="noise3">
+								<div class="sbp1"></div>
+								<a href=""><span class="noise33">话费</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp2"></div>
+								<a href=""><span class="noise33">机票</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp3"></div>
+								<a href=""><span class="noise33">酒店</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp4"></div>
+								<a href=""><span class="noise33">游戏</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp5"></div>
+								<a href=""><span class="noise33">企业购</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp6"></div>
+								<a href=""><span class="noise33">加油卡</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp7"></div>
+								<a href=""><span class="noise33">电影票</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp8"></div>
+								<a href=""><span class="noise33">火车票</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp9"></div>
+								<a href=""><span class="noise33">众筹</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp10"></div>
+								<a href=""><span class="noise33">理财</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp11"></div>
+								<a href=""><span class="noise33">礼品卡</span></a>
+							</li>
+							<li class="noise3">
+								<div class="sbp12"></div>
+								<a href=""><span class="noise33">白条</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="sk">
+			<div class="c1">
+				<div class="hd1">
+					<div class="hd1-1">
+						<i class="hdd"></i>
+						<i class="hdc"></i>
+						<h3 class="hds">京东秒杀</h3>
+						<a href="" class="hdk">
+							总有你想不到的低价
+							<i class="hdkk"></i>
+						</a>
+					</div>
+					<div class="hd1-2">
+						<div class="hd22">
+							<span class="hdo">当前场次</span>
+							<div class="hdq">
+								<div clas="hdqq">
+									<div class="hq1">
+										<span class="qq1">23</span>
+									</div>
+									<div class="hq2">
+										<i class="qq2"></i>
+										<i class="qq3"></i>
+									</div>
+									<div class="hq1">
+										<span class="qq1">59</span>
+									</div>
+									<div class="hq2">
+										<i class="qq2"></i>
+										<i class="qq3"></i>
+									</div>
+									<div class="hq1">
+										<span class="qq1">59</span>
+									</div>
+								</div>
+							</div>
+							<span class="hdo">后结束抢购</span>
+						</div>
+					</div>
+				</div>
+				<div class="hd2">
+					<div class="hdw">
+						<ul>
+							<li class="ghost">
+								<div class="kill">
+									<div class="ker">
+										<span class="fos">精选</span>
+									</div>
+									<a href="" class="ler">
+										<img src="img/big/hong1.jpg" alt="" class="jok">
+										<p>法国进口 巴黎水Perrier气泡矿泉水（原味） 玻璃瓶装 750ML</p>
+									</a>
+									<span class="bitcp"></span>
+									<p class="item">
+										<span class="item1">
+											<i class="item1-1">¥</i>
+											<span class="item1-2">99.00</span>
+										</span>
+										<span class="item2">
+											<i class="item2-1">¥</i>
+											<del class="item2-2">219</del>
+										</span>
+									</p>
+								</div>
+							</li>
+							<li class="ghost">
+									<div class="kill">
+									<div class="ker">
+										<span class="fos">精选</span>
+									</div>
+									<a href="" class="ler">
+										<img src="img/big/hong2.jpg" alt="" class="jok">
+										<p>机械革命(MECHREVO)深海泰坦X6Ti-S(锻刃银)15.6英寸游戏</p>
+									</a>
+									<span class="bitcp"></span>
+									<p class="item">
+										<span class="item1">
+											<i class="item1-1">¥</i>
+											<span class="item1-2">6299.00</span>
+										</span>
+										<span class="item2">
+											<i class="item2-1">¥</i>
+											<del class="item2-2">7499</del>
+										</span>
+									</p>
+								</div>
+							</li>
+							<li class="ghost">
+									<div class="kill">
+									<div class="ker">
+										<span class="fos">精选</span>
+									</div>
+									<a href="" class="ler">
+										<img src="img/big/hong3.jpg" alt="" class="jok">
+										<p>战神（GOD OF WAR）战鹘A526 I5-7500/技嘉B250M/华硕G</p>
+									</a>
+									<span class="bitcp"></span>
+									<p class="item">
+										<span class="item1">
+											<i class="item1-1">¥</i>
+											<span class="item1-2">4899.00</span>
+										</span>
+										<span class="item2">
+											<i class="item2-1">¥</i>
+											<del class="item2-2">4999.00</del>
+										</span>
+									</p>
+								</div>
+							</li>
+							<li class="ghost">
+									<div class="kill">
+									<div class="ker">
+										<span class="fos">精选</span>
+									</div>
+									<a href="" class="ler">
+										<img src="img/big/hong4.jpg" alt="" class="jok">
+										<p>华为（HUAWEI）荣耀畅玩noteLTE版 通话平板电脑 9.6英寸</p>
+									</a>
+									<span class="bitcp"></span>
+									<p class="item">
+										<span class="item1">
+											<i class="item1-1">¥</i>
+											<span class="item1-2">1188.00</span>
+										</span>
+										<span class="item2">
+											<i class="item2-1">¥</i>
+											<del class="item2-2">1499.00</del>
+										</span>
+									</p>
+								</div>
+							</li>
+							<li class="ghost">
+									<div class="kill">
+									<div class="ker">
+										<span class="fos">精选</span>
+									</div>
+									<a href="" class="ler">
+										<img src="img/big/hong5.jpg" alt="" class="jok">
+										<p>苏泊尔（SUPOR）榨汁机家用果汁机TJE06A</p>
+									</a>
+									<span class="bitcp"></span>
+									<p class="item">
+										<span class="item1">
+											<i class="item1-1">¥</i>
+											<span class="item1-2">109</span>
+										</span>
+										<span class="item2">
+											<i class="item2-1">¥</i>
+											<del class="item2-2">149</del>
+										</span>
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="hdf"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="til">
+			<div class="gril">
+				<div class="gril-1">
+					<div class="gril-1-1">
+						<i class="gox1"></i>
+						<i class="gox2"></i>
+						<h3 class="gox3">发现好货</h3>
+						<a href="" class="gox4">发现品质生活
+							<i class="gox5"></i>
+						</a>
+					</div>
+					<div class="gril-1-2">
+						<ul class="gir">
+							<li class="gr1 ios1 ios2">
+								<a href="" class="gr1-1">
+									<p class="gr1-2">Bose蓝牙WIFI音箱</p>
+									<img src="img/big/sp/1.png" alt="">
+								</a>
+							</li>
+							<li class="gr1 ios1">
+								<a href="" class="gr1-1">
+									<p class="gr1-2">马克华菲动物刺绣T恤</p>
+									<img src="img/big/sp/2.png" alt="">
+								</a>
+							</li>
+							<li class="gr1 ios1 ios2">
+								<a href="" class="gr1-1">
+									<p class="gr1-2">水云间高腰无袖连衣裙</p>
+									<img src="img/big/sp/3.png" alt="">
+								</a>
+							</li>
+							<li class="gr1 ios1">
+								<a href="" class="gr1-1">
+									<p class="gr1-2">哥弟女士蕾丝连衣裙</p>
+									<img src="img/big/sp/4.png" alt="">
+								</a>
+							</li>
+							<li class="gr1 ios2">
+								<a href="" class="gr1-1">
+									<p class="gr1-2">马克华菲动物刺绣T恤</p>
+									<img src="img/big/sp/5.png" alt="">
+								</a>
+							</li>
+							<li class="gr1">
+								<a href="" class="gr1-1">
+									<p class="gr1-2">贵州茅台 飞天茅台</p>
+									<img src="img/big/sp/6.png" alt="">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="gril-2">
+					<div class="gril-2-1">
+						<i class="goxs"></i>
+						<i class="goxc"></i>
+						<h3 class="gox3">会买专辑</h3>
+						<a href="" class="gox4">甄选优质好物
+							<i class="gox5"></i>
+						</a>
+					</div>
+					<div class="gril-2-2">
+						<div class="gril-2-3">
+							<div class="gril-2-a">
+								<p class="gril-2-a-p">
+									炫酷黑游戏助攻设备，让战斗更灵活
+								</p>
+								<img class="gril-2-a-img" src="img/big/sp/a1.jpg" alt="">
+								<img class="gril-2-a-img" src="img/big/sp/a2.jpg" alt="">
+								<img class="gril-2-a-img" src="img/big/sp/a3.jpg" alt="">
+							</div>
+							<div class="gril-spx"></div>
+							<div class="gril-2-b">
+								<p class="gril-2-a-p">
+									果粉福利，辅助装备帮你开启苹果全技能
+								</p>
+								<img class="gril-2-a-img" src="img/big/sp/a4.jpg" alt="">
+								<img class="gril-2-a-img" src="img/big/sp/a5.jpg" alt="">
+								<img class="gril-2-a-img" src="img/big/sp/a6.jpg" alt="">
+							</div>
+							<ul class="gril-2-c">
+								<li class="gril-c-spp"></li>
+								<li class="gril-c-sp"></li>
+								<li class="gril-c-sp"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="gril-3">
+					<div class="gril-3-1">
+						<i class="goxv"></i>
+						<i class="goxn"></i>
+						<h3 class="gox3">会买专辑</h3>
+						<a href="" class="gox4">专属你的购物指南
+							<i class="gox5"></i>
+						</a>
+					</div>
+					<div class="gril-3-2">
+						<div class="gril-3-head">
+							<a href="" class="gril-3-a">鼠标</a>
+							<a href="" class="gril-3-a">手机通讯</a>
+							<a href="" class="gril-3-a">固态硬盘</a>
+							<a href="" class="gril-3-a">游戏本</a>
+							<a href="" class="gril-3-a xpxp">内存</a>
+							<div class="misssp"></div>
+						</div>
+						<div class="gril-3-body">
+							<ul class="gril-3-ul">
+								<li class="gril-3-li">
+									<a href="" class="gril-3-a1">
+									<div class="gril-3-a2">1</div>
+									<div class="gril-3-a3">
+										<img src="img/big/sp/b1.png" alt="">
+										<p class="gril-3-a4">前行者牧马人3代无声静音电竞游戏守望先锋lol逆战cf金属机械2代台式电脑笔记本有线宏鼠标 G3无声古铜色金属鼠标</p>
+									</div>
+									</a>
+								</li>
+								<li class="gril-3-li">
+									<a href="" class="gril-3-a1">
+									<div class="gril-3-a22">2</div>
+									<div class="gril-3-a3">
+										<img src="img/big/sp/b2.png" alt="">
+										<p class="gril-3-a4">罗技（Logitech）M220 无线静音鼠标 红色</p>
+									</div>
+									</a>
+								</li>
+								<li class="gril-3-li">
+									<a href="" class="gril-3-a11">
+									<div class="gril-3-a23">3</div>
+									<div class="gril-3-a3">
+										<img src="img/big/sp/b3.png" alt="">
+										<p class="gril-3-a4">联想（lenovo）M120 大红点有线光学鼠标 黑色 有线鼠标</p>
+									</div>
+									</a>
+								</li>
+								<li class="gril-3-li">
+									<a href="" class="gril-3-a1">
+									<div class="gril-3-a24">4</div>
+									<div class="gril-3-a3">
+										<img src="img/big/sp/b4.png" alt="">
+										<p class="gril-3-a4">小米（MI）小米便携鼠标 无线蓝牙4.0 男女生家用/笔记本电脑办公/鼠标 银色</p>
+									</div>
+									</a>
+								</li>
+								<li class="gril-3-li">
+									<a href="" class="gril-3-a1">
+									<div class="gril-3-a24">5</div>
+									<div class="gril-3-a3">
+										<img src="img/big/sp/b5.png" alt="">
+										<p class="gril-3-a4">罗技（Logitech）G102 游戏鼠标 6000DPI RGB鼠标 黑色</p>
+									</div>
+									</a>
+								</li>
+								<li class="gril-3-li">
+									<a href="" class="gril-3-a11">
+									<div class="gril-3-a24">6</div>
+									<div class="gril-3-a3">
+										<img src="img/big/sp/b6.png" alt="">
+										<p class="gril-3-a4">ThinkPad（ThinkLife）WLM200无线静音鼠标4X30M68237</p>
+									</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cou">
+			<div class="cou1">
+				<div class="ge1">
+					<div class="ge1-1">
+						<i class="goxk"></i>
+						<i class="goxl"></i>
+						<h3 class="gox3">领券中心</h3>
+						<a href="" class="gox4">前往领券中心
+							<i class="gox5"></i>
+						</a>
+					</div>
+					<div class="ge1-2">
+						<ul clas="ge1-2-ul">
+							<li class="ge1-2-li">
+								<a href="" class="ge1-2-a">
+									<div class="ge1-2-div">
+										<p class="ge1-a">
+											<i>¥</i><span class="ge1-a-s">200</span>
+										</p>
+										<p class="ge1-b"><span class="ge1-b-s">仅可购买京东自营华为部分手机商品</span></p>
+										<p class="ge1-c"><span class="ge1-c-s">消费满1000元可用</span></p>
+										<p class="ge1-d">更多好券</p>
+									</div>
+									<img  class="ge1-img"src="img/big/sp/c1.png" alt="">
+								</a>
+							</li>
+							<li class="ge1-2-li">
+								<a href="" class="ge1-2-a">
+									<div class="ge1-2-div">
+										<p class="ge1-a">
+											<i>¥</i><span class="ge1-a-s">800</span>
+										</p>
+										<p class="ge1-b"><span class="ge1-b-s">仅可购买部分汉米尔顿自营商品商品</span></p>
+										<p class="ge1-c"><span class="ge1-c-s">消费满6999元可用</span></p>
+										<p class="ge1-d">更多服饰箱包券</p>
+									</div>
+									<img  class="ge1-img"src="img/big/sp/c2.png" alt="">
+								</a>
+							</li>
+							<li class="ge1-2-li">
+								<a href="" class="ge1-2-a">
+									<div class="ge1-2-div">
+										<p class="ge1-a">
+											<i>¥</i><span class="ge1-a-s">1599</span>
+										</p>
+										<p class="ge1-b"><span class="ge1-b-s">仅可购买优学派学生平板指定商品</span></p>
+										<p class="ge1-c"><span class="ge1-c-s">消费满1699元可用</span></p>
+										<p class="ge1-d">更多数码家电券</p>
+									</div>
+									<img  class="ge1-img"src="img/big/sp/c3.png" alt="">
+								</a>
+							</li>
+							<li class="ge1-2-lii">
+								<a href="" class="ge1-2-a">
+									<div class="ge1-2-div">
+										<p class="ge1-a">
+											<i>¥</i><span class="ge1-a-s">100</span>
+										</p>
+										<p class="ge1-b"><span class="ge1-b-s">仅可购买家纺指定商品</span></p>
+										<p class="ge1-c"><span class="ge1-c-s">消费满199元可用</span></p>
+										<p class="ge1-d">更多家居家纺券</p>
+									</div>
+									<img  class="ge1-img"src="img/big/sp/c4.png" alt="">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ge2">
+					<div class="ge2-head">
+						<i class="goxo"></i>
+						<i class="goxu"></i>
+						<h3 class="gox3">排行榜</h3>
+						<a href="" class="gox4">专属你的购物指南
+							<i class="gox5"></i>
+						</a>
+					</div>
+					<div class="ge2-body">
+						<a href="" class="ge2-a">
+							<img class="ge2-img" src="img/big/sp/c5.png" alt="">
+							<span class="ge2-span1">为啥空姐走哪都拉行李箱？原因竟然是.....</span>
+							<span class="ge2-span2">为啥空姐走哪都拉行李箱...&nbsp;&nbsp;<i class="ge2-span2-2">></i></span>
+							<span class="ge2-span3">
+								<i class="minsee"></i>
+								27873人看过
+							</span>
+
+						</a>
+						<ul class="wudian">
+							<li class="wwhongdian"></li>
+							<li class="whongdian"></li>
+							<li class="whongdian"></li>
+							<li class="whongdian"></li>
+							<li class="whongdian"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bs">
+			<div class="bsh">
+				<div class="bs1-1">
+				<img src="img/big/sp/bs1.png" alt="">
+				</div>
+				<img clas="bsh-h" src="img/big/sp/bs2.png" alt="">
+				<img clas="bsh-h" src="img/big/sp/bs3.png" alt="">
+			</div>
+		</div>
+		<div class="cs">
+			<div class="cshead">
+				<div class="cshead-1"><h3 class="cshead-2">享品质</h3></div>
+			</div>
+			<div class="csbody">
+				<ul class="csbody-ul">
+					<li class="cslive">
+						<div cslive-inside>
+						<div class="cslive-1">
+							<h4 class="cslive-1-2">漫威</h4>
+							<span class="cslive-1-3">更多<i class="cslive-1-4"></i></span></div>
+						<ul class="cslive-2">
+							<li class="cslive-2-1"></li>
+							<li class="cslive-2-1"></li>
+							<li class="cslive-2-1"></li>
+							<li class="cslive-2-1"></li>
+							<li class="cslive-2-1"></li></ul>
+						<a href="" class="cslive-3"><i class="cslive-3-1"><</i></a>
+						<a href="" class="cslive-4"><i class="cslive-4-1">></i></a>
+						<a href="" class="cslive-5"></a>
+						</div>
+					</li>
+					<li class="csbody-li csb1">
+						<div class="evil-1">
+							<div class="csb1-2">
+								<div class="cb">
+									<h4 class="cbh4">新品首发</h4>
+									<p class="cbp">红米Note5A上市</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="csbody-li csb2">
+						<div class="evil-2">
+							<div class="csb2-2">
+								<div class="cb">
+									<h4 class="cbh4">会逛</h4>
+									<p class="cbp">钟表品类日 满1000减150</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="csbody-li csb3">
+						<div class="evil-3">
+							<div class="csb3-2">
+								<div class="cb">
+									<h4 class="cbh4">奢侈大牌</h4>
+									<p class="cbp">尽享品质生活</p>
+								</div>	
+							</div>
+						</div>
+					</li>
+					<li class="csbody-li csb4">
+						<div class="evil-4">
+							<div class="csb4-2">
+							    <div class="cb">
+									<h4 class="cbh4">智能生活</h4>
+									<p class="cbp">智能潮货 嗨购不停</p>
+								</div>		
+							</div>
+						</div>
+					</li>
+					<li class="csbody-li csb5">
+						<div class="evil-5">
+							<div class="csb5-2">
+								<div class="cb">                                  
+									<h4 class="cbh4">智能生活</h4>
+									<p class="cbp">智能潮货 嗨购不停</p>
+								</div>		
+							</div>
+						</div>
+					</li>
+					<li class="csbody-li csb6">
+						<div class="evil-6">
+							<div class="csb6-2">
+								 <div class="cb">
+									<h4 class="cbh4">京东超市</h4>
+									<p class="cbp">精选超值好货 天天特价</p>
+								</div>		
+							</div>
+						</div>
+					</li>
+					<li class="csali csb7">
+						<div class="evilc">
+							<div class="cbb">
+								<h4 class="cbh44">设计师推荐</h4>
+								<p class="cbp">家具超级品类</p>
+							</div>	
+						</div>
+					</li>
+					<li class="csalii csb8">
+						<div class="evilo">
+							<div class="cbb">
+								<h4 class="cbh44">全球尖货</h4>
+								<p class="cbpp">全球自营好货</p>
+							</div>	
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bs">
+			<div class="bsh">
+				<div class="bs1-1">
+				<img src="img/big/sp/bs4.png" alt="">
+				</div>
+				<img clas="bsh-h" src="img/big/sp/bs5.png" alt="">
+				<img clas="bsh-h" src="img/big/sp/bs6.png" alt="">
+			</div>
+		</div>
+		<div class="gaga">
+			<div class="cshead">
+				<div class="cshead-1"><h3 class="cshead-2">爱生活</h3></div>
+				<div class="gagabody">
+					<div class="gaga1">
+						<div class="gagab">
+							<div class="gaga1-1">
+								<h3 class="it1">爱逛</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="ita">七夕</a>
+									<a href="" class="ita">秋冬换新</a>
+									<a href="" class="ita">舒适内衣</a>
+									<a href="" class="ita">珠宝</a>
+									<a href="" class="ita">大牌瑞表</a>
+								</div>
+							</div>
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turb1"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msn1">型男秋上新</p>
+											<p class="msn2">满299减50</p>
+											<img src="img/min/ai/2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msn1">秋冬上新购</p>
+											<p class="msn2">低至5折</p>
+											<img src="img/min/ai/3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msn1">童装-秋冬换新潮</p>
+											<p class="msn2">3件7折</p>
+											<img src="img/min/ai/4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msn1">秋冬换新潮</p>
+											<p class="msn2">领卷299减50</p>
+											<img src="img/min/ai/5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/9.png" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/10.png" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/11.png" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/sh1.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/sh2.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/sh3.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/sha4.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/sh5.png" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/sh6.png" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga2">
+						<div class="gaga2-1">
+							<h3 class="it1">爱美丽</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="ita2">洁面</a>
+									<a href="" class="ita2">套装</a>
+									<a href="" class="ita2">乳液</a>
+									<a href="" class="ita2">面膜</a>
+									<a href="" class="ita2">洁癖学院</a>
+									<a href="" class="ita2">洗护发</a>
+								</div>
+							</div>
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turbq"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnq">美妆馆</p>
+												<p class="msn2">跨店2件5折</p>
+												<img src="img/min/ai/rx2.png" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnq">面部护肤</p>
+												<p class="msn2">满199件100</p>
+												<img src="img/min/ai/rx3.png" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnq">香水彩妆</p>
+												<p class="msn2">爆款低至5折</p>
+												<img src="img/min/ai/rx4.png" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnq">个护馆</p>
+												<p class="msn2">满199减100</p>
+												<img src="img/min/ai/rx5.png" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/rx6.png" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/rx7.png" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/rx8.png" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/rx9.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/rx10.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/rx11.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/rx12.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/rx13.png" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/rx14.png" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		<div class="gaga">
+			<div class="cshead">
+				<div class="gagabody">
+					<div class="gaga1">
+						<div class="gagab">
+							<div class="gagas1">
+								<h3 class="it1">家电馆</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="ita3">3件8.8折</a>
+									<a href="" class="ita3">撩妹神器</a>
+									<a href="" class="ita3">七夕</a>
+									<a href="" class="ita3">裸价出击 </a>
+									<a href="" class="ita3">抽净化机</a>
+								</div>
+							</div>
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turbh"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msns">领券再减1000</p>
+											<p class="msn2">家电家装节</p>
+											<img src="img/min/ai/mj2.png" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msns">厨卫家装节</p>
+											<p class="msn2">3件88折</p>
+											<img src="img/min/ai/mj3.png" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msns">七夕小家电</p>
+											<p class="msn2">满1000减150元</p>
+											<img src="img/min/ai/mj4.png" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msns">扫地机节</p>
+											<p class="msn2">低至五折</p>
+											<img src="img/min/ai/mj5.png" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/mj6.png" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/mj7.png" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/mj8.png" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/mj9.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mj10.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mj11.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mj12.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mj13.png" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/mj14.png" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga2">
+						<div class="gagas2">
+							<h3 class="it1">搞机派</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="ita4">金属机身</a>
+									<a href="" class="ita4">快速充电</a>
+									<a href="" class="ita4">拍照神器</a>
+									<a href="" class="ita4">后置双摄像</a>
+								</div>
+							</div>
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turbt"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msncare">新Phone尚</p>
+												<p class="msn2">坚果Pro银魂10点抢购</p>
+												<img src="img/min/ai/mo2.png" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msncare">关爱老人</p>
+												<p class="msn2">老人机9.9元起！</p>
+												<img src="img/min/ai/mo3.png" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msncare">京东网厅</p>
+												<p class="msn2">每天1元享800M</p>
+												<img src="img/min/ai/mo4.png" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msncare">京选卖家</p>
+												<p class="msn2">iPhone 6限时秒杀</p>
+												<img src="img/min/ai/mo5.png" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/mo6.png" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/mo7.png" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/mo8.png" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/mo9.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mo10.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mo11.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mo12.png" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/mo13.png" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/mo14.png" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		<div class="snake">
+			<div class="getlow">
+				<div class="outside">
+					<div class="show">
+					<h3 class="it1">电脑数码</h3>
+						<div class="it2">
+							<div class="it2-1"></div>
+						</div>
+						<div class="itdo">
+							<a href="" class="ita5">电脑馆</a>
+							<a href="" class="ita5">游戏极品</a>
+							<a href="" class="ita5">装机大师</a>
+							<a href="" class="ita5">职场换新 </a>
+							<a href="" class="ita5">女神频道</a>
+							<a href="" class="ita5">虚拟现实</a>
+							<a href="" class="ita5">二合一平板</a>
+							<a href="" class="ita5">电子教育</a>
+							<a href="" class="ita5">飞信管 </a>
+							<a href="" class="ita5">全球智选</a>
+							<a href="" class="ita5">照片冲印</a>
+						</div>
+					</div>
+					<div class="now">
+						<div class="un1">
+
+						</div>
+						<div class="un2"></div>
+					</div>
+				</div></div>
+				<div class="jbm">
+					<div class="gaga3">
+						<div class="gagab">
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turbee"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msns">电脑馆</p>
+											<p class="msn2">360翻转触控本1999元！</p>
+											<img src="img/min/ai/un2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msns">外设装备</p>
+											<p class="msn2">AIO520 致爱七夕</p>
+											<img src="img/min/ai/un3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msns">电脑配件</p>
+											<p class="msn2">游戏主机10元定金抵400</p>
+											<img src="img/min/ai/un4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msns">办公生活</p>
+											<p class="msn2">文具市集每满149减50</p>
+											<img src="img/min/ai/un5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/un6.jpg" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/un7.jpg" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/un8.jpg" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/un9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/un10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/un11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/un12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/un13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/un14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga4">
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turca"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnwhe">平板电脑</p>
+												<p class="msn2">娱乐办公能手</p>
+												<img src="img/min/ai/jub2.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnwhe">京东开学</p>
+												<p class="msn2">学习装备5折抢</p>
+												<img src="img/min/ai/jub3.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnwhe">娱乐影音</p>
+												<p class="msn2">大牌耳机4折</p>
+												<img src="img/min/ai/jub4.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnwhe">摄影摄像</p>
+												<p class="msn2">100张照片9.9摄影摄像</p>
+												<img src="img/min/ai/jub5.jpg" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/jub6.jpg" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/jub7.jpg" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/jub8.jpg" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/jub9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jub10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jub11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jub12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jub13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/jub14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="gaga">
+			<div class="cshead">
+				<div class="gagabody">
+					<div class="gaga1">
+						<div class="gagab">
+							<div class="gagahr">
+								<h3 class="it1">爱逛</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itas">七夕</a>
+									<a href="" class="itas">秋冬换新</a>
+									<a href="" class="itas">舒适内衣</a>
+									<a href="" class="itas">珠宝</a>
+									<a href="" class="itas">大牌瑞表</a>
+								</div>
+							</div>
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turkii"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msnkii">型男秋上新</p>
+											<p class="msn2">满299减50</p>
+											<img src="img/min/ai/wi2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnkii">秋冬上新购</p>
+											<p class="msn2">低至5折</p>
+											<img src="img/min/ai/wi3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnkii">童装-秋冬换新潮</p>
+											<p class="msn2">3件7折</p>
+											<img src="img/min/ai/wi4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnkii">秋冬换新潮</p>
+											<p class="msn2">领卷299减50</p>
+											<img src="img/min/ai/wi5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/wi6.jpg" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/wi7.jpg" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/wi8.jpg" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/wi9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/wi10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/wi11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/wi12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/wi13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/wi14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga2">
+						<div class="gagasr">
+							<h3 class="it1">爱美丽</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itaout">洁面</a>
+									<a href="" class="itaout">套装</a>
+									<a href="" class="itaout">乳液</a>
+									<a href="" class="itaout">面膜</a>
+									<a href="" class="itaout">洁癖学院</a>
+									<a href="" class="itaout">洗护发</a>
+								</div>
+							</div>
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turker"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnker">美妆馆</p>
+												<p class="msn2">跨店2件5折</p>
+												<img src="img/min/ai/ch2.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnker">面部护肤</p>
+												<p class="msn2">满199件100</p>
+												<img src="img/min/ai/ch3.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnker">香水彩妆</p>
+												<p class="msn2">爆款低至5折</p>
+												<img src="img/min/ai/ch4.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnker">个护馆</p>
+												<p class="msn2">满199减100</p>
+												<img src="img/min/ai/ch5.jpg" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/ch6.jpg" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/ch7.jpg" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/ch8.jpg" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/ch9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ch10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ch11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ch12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ch13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/ch14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		<div class="bs">
+			<div class="bsh">
+				<div class="bs1-1">
+				<img src="img/min/ai/stb1.jpg" alt="">
+				</div>
+				<img clas="bsh-h" src="img/min/ai/stb2.jpg" alt="">
+				<img clas="bsh-h" src="img/min/ai/stb3.jpg" alt="">
+			</div>
+		</div>
+		<div class="snake">
+			<div class="getlow">
+				<div class="outside">
+					<div class="showw">
+					<h3 class="it1">爱吃</h3>
+						<div class="it2">
+							<div class="it2-1"></div>
+						</div>
+						<div class="itdo">
+							<a href="" class="ita6">休闲零食</a>
+							<a href="" class="ita6">坚果</a>
+							<a href="" class="ita6">牛奶</a>
+							<a href="" class="ita6">饮料冲调</a>
+							<a href="" class="ita6">食用油</a>
+							<a href="" class="ita6">大米</a>
+							<a href="" class="ita6">白酒</a>
+							<a href="" class="ita6">红酒</a>
+							<a href="" class="ita6">冰皮月饼 </a>
+							<a href="" class="ita6">大闸蟹</a>
+							<a href="" class="ita6">酸奶</a>
+							<a href="" class="ita6">鸭胗</a>
+							<a href="" class="ita6">柠檬</a>
+						</div>
+					</div>
+					<div class="now">
+						<div class="un1">
+
+						</div>
+						<div class="un2"></div>
+					</div>
+				</div></div>
+				<div class="jbm">
+					<div class="gaga3">
+						<div class="gagab">
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turstay"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msnlos">粮油调味</p>
+											<p class="msn2">速食特辑</p>
+											<img src="img/min/ai/ac2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnlos">饮料冲调</p>
+											<p class="msn2">大牌水饮</p>
+											<img src="img/min/ai/ac3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnlos">休闲零食</p>
+											<p class="msn2">七夕特辑</p>
+											<img src="img/min/ai/ac4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnlos">中外名酒</p>
+											<p class="msn2">两件7.7折</p>
+											<img src="img/min/ai/ac5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/ac6.jpg" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/ac7.jpg" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/ac8.jpg" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/ac9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ac10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ac11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ac12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/ac13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/ac14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga4">
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turhad"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnlos">粮油调味</p>
+												<p class="msn2">速食特辑</p>
+												<img src="img/min/ai/jd2.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnlos">东家菜</p>
+												<p class="msn2">精致生活一键立享</p>
+												<img src="img/min/ai/jd3.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnlos">休闲零食</p>
+												<p class="msn2">七夕特辑</p>
+												<img src="img/min/ai/jd4.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnlos">“0”元试吃</p>
+												<p class="msn2">丰富好味轻松品尝</p>
+												<img src="img/min/ai/jd5.jpg" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/jd6.jpg" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/jd7.jpg" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/jd8.jpg" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/jd9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jd10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jd11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jd12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jd13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/jd14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+		<div class="gaga">
+			<div class="cshead">
+				<div class="gagabody">
+					<div class="gaga1">
+						<div class="gagab">
+							<div class="gagaeee">
+								<h3 class="it1">爱宝宝</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itasss">洗胃护养</a>
+									<a href="" class="itasss">妈妈专区</a>
+									<a href="" class="itasss">稳居服饰</a>
+									<a href="" class="itasss">婴儿推车</a>
+								</div>
+							</div>
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turkrk"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msnlnd">奶粉辅食</p>
+											<p class="msn2">多买多优惠</p>
+											<img src="img/min/ai/bao2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnlnd">尿裤湿巾</p>
+											<p class="msn2">大牌直降</p>
+											<img src="img/min/ai/bao3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnlnd">玩具乐器</p>
+											<p class="msn2">爆款抢不停</p>
+											<img src="img/min/ai/bao4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnlnd">陪伴宝宝</p>
+											<p class="msn2">跨店满199减50</p>
+											<img src="img/min/ai/bao5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/bao6.jpg" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/bao7.jpg" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/bao8.jpg" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/bao9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/bao10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/bao11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/bao12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/bao13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/bao14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga2">
+						<div class="gagaspaz">
+							<h3 class="it1">爱家</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itawork">装修</a>
+									<a href="" class="itawork">设计帮</a>
+									<a href="" class="itawork">马桶</a>
+									<a href="" class="itawork">书房</a>
+									<a href="" class="itawork">保温杯</a>
+									<a href="" class="itawork">枕芯</a>
+								</div>
+							</div>
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turkwo"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnfi">家装建材</p>
+												<p class="msn2">免息最低3期</p>
+												<img src="img/min/ai/jia2.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnfi">品质厨具</p>
+												<p class="msn2">自营厨具满300减80</p>
+												<img src="img/min/ai/jia3.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnfi">精品家具</p>
+												<p class="msn2">满减优惠</p>
+												<img src="img/min/ai/jia4.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnfi">居家日用</p>
+												<p class="msn2">满998折</p>
+												<img src="img/min/ai/jia5.jpg" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/jia6.jpg" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/jia7.jpg" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/jia8.jpg" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/jia9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jia10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jia11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jia12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/jia13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/jia14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		<div class="gaga">
+			<div class="cshead">
+				<div class="gagabody">
+					<div class="gaga1">
+						<div class="gagab">
+							<div class="gagaddd">
+								<h3 class="it1">爱阅读</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itaddd">外语</a>
+									<a href="" class="itaddd">历史</a>
+									<a href="" class="itaddd">经营</a>
+									<a href="" class="itaddd">摄影</a>
+									<a href="" class="itaddd">编程</a>
+								</div>
+							</div>
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turddd"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msnddd">图书排行榜</p>
+											<p class="msn2">畅销好书</p>
+											<img src="img/min/ai/book2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnddd">特色书店</p>
+											<p class="msn2">每满49减15</p>
+											<img src="img/min/ai/book3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnddd">文学馆</p>
+											<p class="msn2">每满150减50</p>
+											<img src="img/min/ai/book4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnddd">童书馆</p>
+											<p class="msn2">每满150减50</p>
+											<img src="img/min/ai/book5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/book6.jpg" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/book7.jpg" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/book8.jpg" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/book9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/book10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/book11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/book12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/book13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/book14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga2">
+						<div class="gagalll">
+							<h3 class="it1">爱车</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="italll">雨刮器</a>
+									<a href="" class="italll">高清记录仪</a>
+									<a href="" class="italll">机油</a>
+									<a href="" class="italll">美容洗车</a>	
+								</div>
+							</div>
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turlll"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnlll">家装建材</p>
+												<p class="msn2">免息最低3期</p>
+												<img src="img/min/ai/car2.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnlll">品质厨具</p>
+												<p class="msn2">自营厨具满300减80</p>
+												<img src="img/min/ai/car3.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnlll">精品家具</p>
+												<p class="msn2">满减优惠</p>
+												<img src="img/min/ai/car4.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnlll">居家日用</p>
+												<p class="msn2">满998折</p>
+												<img src="img/min/ai/car5.jpg" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/car6.jpg" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/car7.jpg" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/car8.jpg" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/car9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/car10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/car11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/car12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/car13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/car14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		<div class="gaga">
+			<div class="cshead">
+				<div class="gagabody">
+					<div class="gaga1">
+						<div class="gagab">
+							<div class="gagahaa">
+								<h3 class="it1">生活旅行</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itahaa">机票</a>
+									<a href="" class="itahaa">火车票</a>
+									<a href="" class="itahaa">电影票</a>
+								</div>
+							</div>
+							<div class="gaga1-2">
+								<div class="mie1">
+									<div class="turhaa"></div>
+									<div class="turb2">
+										<span class="fonh"></span>
+										<span class="fonv"></span>
+										<a href="" class="msn">
+											<p class="msnhaa">特惠机票</p>
+											<p class="msn2">低至1折</p>
+											<img src="img/min/ai/liv2.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnhaa">火车票</p>
+											<p class="msn2">用卷超值</p>
+											<img src="img/min/ai/liv3.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnhaa">星级酒店</p>
+											<p class="msn2">超值半价</p>
+											<img src="img/min/ai/liv4.jpg" alt="" class="letgo">
+										</a>
+										<a href="" class="msn">
+											<p class="msnhaa">加油卡</p>
+											<p class="msn2">省钱省心</p>
+											<img src="img/min/ai/liv5.jpg" alt="" class="letgo">
+										</a>
+									</div>
+										<div class="turb3">
+											<img src="img/min/ai/liv6.jpg" alt="">
+										</div>
+										<div class="turb3">
+											<img src="img/min/ai/liv7.jpg" alt="">
+										</div>
+										<div class="turb4">
+											<img src="img/min/ai/liv8.jpg" alt="">
+										</div>
+									</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/liv9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/liv10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/liv11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/liv12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/liv13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/liv14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="gaga2">
+						<div class="gagaohh">
+							<h3 class="it1">爱健康</h3>
+								<div class="it2">
+									<div class="it2-1"></div>
+								</div>
+								<div class="it3">
+									<a href="" class="itaohh">健康服务</a>
+									<a href="" class="itaohh">计生情趣</a>
+									<a href="" class="itaohh">隐形眼镜</a>
+									<a href="" class="itaohh">慢病管理</a>
+								</div>
+							</div>
+							<div class="gaga2-2">
+								<div class="mie1">
+										<div class="turohh"></div>
+										<div class="turb2">
+											<span class="fonh"></span>
+											<span class="fonv"></span>
+											<a href="" class="msn">
+												<p class="msnohh">家用医疗</p>
+												<p class="msn2">爆品直降</p>
+												<img src="img/min/ai/yao2.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnohh">营养保健</p>
+												<p class="msn2">每满200-40</p>
+												<img src="img/min/ai/yao3.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnohh">滋补养生</p>
+												<p class="msn2">同仁堂低至9.9元</p>
+												<img src="img/min/ai/yao4.jpg" alt="" class="letgo">
+											</a>
+											<a href="" class="msn">
+												<p class="msnohh">京东医药</p>
+												<p class="msn2">满199减80</p>
+												<img src="img/min/ai/yao5.jpg" alt="" class="letgo">
+											</a>
+										</div>
+											<div class="turb3">
+												<img src="img/min/ai/yao6.jpg" alt="">
+											</div>
+											<div class="turb3">
+												<img src="img/min/ai/yao7.jpg" alt="">
+											</div>
+											<div class="turb4">
+												<img src="img/min/ai/yao8.jpg" alt="">
+											</div>
+										</div>
+								<div class="turb5">
+									<ul class="sh1">
+										<li class="shb"><img src="img/min/ai/yao9.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/yao10.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/yao11.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/yao12.jpg" alt="" class="rx"></li>
+										<li class="shb"><img src="img/min/ai/yao13.jpg" alt="" class="rx"></li>
+										<li class="shbb"><img src="img/min/ai/yao14.jpg" alt="" class="rx"></li>
+									</ul>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="frt">
+						<div class="cshead">
+							<div class="cshead-1"><h3 class="cshead-2">购物色</h3></div>
+						</div>
+						<div class="moon">
+							<ul>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/1.jpg" alt="">
+										<div class="nig1">
+											<div class="gt">
+												<p class="gt2">司法拍卖</p>
+												<h4 class="gt3">法院好货 公开抢拍</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/2.jpg" alt="">
+										<div class="nig2">
+											<div class="gt">
+												<p class="gt2">环球时尚</p>
+												<h4 class="gt3">环球名品，奢华精选</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/3.jpg" alt="">
+										<div class="nig3">
+											<div class="gt">
+												<p class="gt2">品牌特惠</p>
+												<h4 class="gt3">品牌限时特卖</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/4.jpg" alt="">
+										<div class="nig4">
+											<div class="gt">
+												<p class="gt2">陪伴宝宝</p>
+												<h4 class="gt3">买3免1</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/5.jpg" alt="">
+										<div class="nig5">
+											<div class="gt">
+												<p class="gt2">企业采购</p>
+												<h4 class="gt3">戴尔品牌日最高省500元</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/6.jpg" alt="">
+										<div class="nig6">
+											<div class="gt">
+												<p class="gt2">IN货推荐</p>
+												<h4 class="gt3">智能电动车立省600</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="nigt">
+									<a href="">
+										<img src="img/min/fin/7.jpg" alt="">
+										<div class="nig7">
+											<div class="gt">
+												<p class="gt2">京东扶贫</p>
+												<h4 class="gt3">买特产，助贫农</h4>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				<div class="bs">
+					<div class="bsh">
+						<div class="bs1-1">
+						<img src="img/min/fin/s1.jpg" alt="">
+						</div>
+						<img clas="bsh-h" src="img/min/fin/s2.jpg" alt="">
+						<img clas="bsh-h" src="img/min/fin/s3.jpg" alt="">
+					</div>
+				</div>
+				<div class="cshead">
+					<div class="cshead-1"><h3 class="cshead-2">还没逛够</h3></div>
+				</div>
+				<div class="ua">
+					<ul class="ual">
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/1.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G102 游戏鼠标 6000DPI RGB鼠标 黑色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/2.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）炼狱蝰蛇2000 游戏鼠标 黑色版 电竞鼠标</p>
+								<p class="bos3">¥199.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/3.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇 Razer 太攀皇蛇 钻石星辰版 Taipan 有线游戏鼠标 黑色 电竞鼠标</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/4.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G302 电竞游戏鼠标</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/5.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G502 竞技游戏鼠标 RGB炫彩有线支持宏定义编程</p>
+								<p class="bos3">¥399.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/6.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想（Lenovo）SSD固态硬盘 笔记本 台式机通用 M.2 2242 240-256G</p>
+								<p class="bos3">¥739.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/7.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">达尔优（dare-u） G60 牧马人游戏鼠标 四色呼吸灯变换 有线鼠标</p>
+								<p class="bos3">¥108.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/8.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">鼠标垫护腕 立体个性动漫硅胶护腕游戏鼠标垫电脑办公手腕垫</p>
+								<p class="bos3">¥21.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/9.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇(Razer)狂蛇标准版2000DPI左右手通用电脑有线竞技游戏鼠标黑色</p>
+								<p class="bos3">¥165.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/10.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">金士顿(Kingston)系统指定内存 DDR4 2133 8G 笔记本内存</p>
+								<p class="bos3">¥549.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/11.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）金环蛇 Krait 2013版 有线游戏鼠标 黑色 电竞鼠标</p>
+								<p class="bos3">¥199.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/12.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）M546无线鼠标 黑色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/13.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想（Lenovo)SL700 120G SATA3 闪电鲨系列SSD固态硬盘</p>
+								<p class="bos3">¥379.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/14.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">达尔优 EM905 专业级游戏RGB炫光鼠标 黑色 有线鼠标</p>
+								<p class="bos3">¥118.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/15.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">三星(SAMSUNG) 850 EVO 120G SATA3 固态硬盘</p>
+								<p class="bos3">¥469.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/16.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（razer）炼狱蝰蛇电脑游戏鼠标有线2013版电竞鼠标宏设置笔记本鼠标</p>
+								<p class="bos3">¥239.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/17.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G102 竞技游戏鼠标 RGB炫彩有线宏定义编程鼠标</p>
+								<p class="bos3">¥139.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/18.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">微软Xbox One无线手柄 无线适配器支持Windows7 手柄 精英版手柄 控制器 Xbox One</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/19.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（razer）炼狱蝰蛇电脑游戏鼠标有线三色背光电竞鼠标宏设置</p>
+								<p class="bos3">¥165.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/20.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想笔记本电脑 昭阳加固系列R2000S 14.1英寸 高端商务办公本</p>
+								<p class="bos3">¥60000.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/21.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G系列电竞游戏鼠标宏编程有线发光笔记本台式电脑</p>
+								<p class="bos3">¥139.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/22.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">浦科特 M7VC 256G SATA3固态硬盘</p>
+								<p class="bos3">¥689.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/23.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech） M545 无线鼠标 黑色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/24.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">钛度(Taidu)TSG301B电竞者标准版 镜面外壳 RGB游戏鼠标 白色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/25.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想(Lenovo)拯救者R720 15.6英寸游戏笔记本电脑(i5-7300HQ 8G 1T+128G SSD GTX1050Ti 4G IPS)</p>
+								<p class="bos3">¥6299.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/26.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）ABYSSUS狂蛇型号 白色版 有线游戏鼠标 白色 电竞鼠标</p>
+								<p class="bos3">¥129.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/27.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G102/G502系列游戏鼠标有线电竞游戏鼠标 可编辑宏设置 G102黑色鼠标 宏编程</p>
+								<p class="bos3">¥139.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/28.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">logitech/罗技G502有线游戏鼠标LOL/RPG专业竞技可编程RGB炫彩鼠标 罗技G402</p>
+								<p class="bos3">¥205.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/29.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">SONY（索尼）PS4 slim/Pro 正版游戏光盘 使命召唤13港版中文</p>
+								<p class="bos3">¥159.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/30.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">logitech/罗技G502游戏鼠标LOL英雄联盟竞技可编程RGB炫彩有线游戏鼠</p>
+								<p class="bos3">¥123.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/31.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer） DeathAdder蝰蛇守望先锋有线游戏鼠标RGB幻彩炼狱蝰</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/32.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">神舟（HASEE）战神Z7-KP7GT 15.6英寸游戏本笔记本电脑(i7-7700HQ </p>
+								<p class="bos3">¥7299.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/33.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇 炼狱蝰蛇2000/2013/3500/RGB幻彩版有线游戏鼠标 宏定义可编程电</p>
+								<p class="bos3">¥145.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/34.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">华硕（ASUS）GX800VH玩家国度ROG游戏笔记本18.4英寸水冷游戏本</p>
+								<p class="bos3">¥69999.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/35.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">剑圣一族L10有线个性游戏鼠标 宏编程金属 lol逆战cf守望先锋牧马人风格</p>
+								<p class="bos3">¥168.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/36.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）M275 无线鼠标 黑色</p>
+								<p class="bos3">¥85.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/37.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">美女3D胸部护腕鼠标垫 电脑办公加厚创意手托腕垫 宅男 包邮 南宫问天</p>
+								<p class="bos3">¥21.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/38.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">火银狐 牧马人机械鼠标RGB炫光LOL守望先锋专业CF竞技游戏鼠标有线</p>
+								<p class="bos3">¥39.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/39.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">麦多多 type-c快充数据线 适用小米5/5s4c华为p9p10荣耀8乐视2手机充电线器 枪黑色1米</p>
+								<p class="bos3">¥57.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/40.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">微软（Microsoft）Designer 蓝牙鼠标</p>
+								<p class="bos3">¥169.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/41.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">沃野牧马人USB无声静音台式电脑笔记本发光 lol cf 鼠标</p>
+								<p class="bos3">¥39.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/42.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）Mamba曼巴眼镜蛇5G 幻彩灯光 电竞有线无线游戏鼠标 黑色</p>
+								<p class="bos3">¥599.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/43.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">鼠标垫护腕 慢回弹带护腕鼠标垫电脑办公加厚创意个性手腕垫 包邮</p>
+								<p class="bos3">¥30.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/44.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer） 炼狱蝰蛇精英版电竞游戏鼠标16000DPI</p>
+								<p class="bos3">¥359.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/45.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">双飞燕（A4TECH) N-810FX 有线鼠标 办公鼠标 笔记本鼠标</p>
+								<p class="bos3">¥49.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/46.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">达尔优（dare-u）LM120G 牧马人系列无线光学鼠标 无线鼠标</p>
+								<p class="bos3">¥79.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/47.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">酷奇 显示器高清防刮防蓝光14 13.3 15.6英寸笔记本电脑保护贴膜</p>
+								<p class="bos3">¥26.90</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/48.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）M185 无线鼠标 黑色灰边</p>
+								<p class="bos3">¥52.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/49.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">鼠标垫护腕 美女胸部臀部护手3D立体可爱硅胶护腕送男友宅男 包邮 古河渚</p>
+								<p class="bos3">¥21.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/50.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技G502炫光自适应RGB游戏鼠标 宏定义编程LOL发光鼠标</p>
+								<p class="bos3">¥399.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/51.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G102 游戏鼠标 6000DPI RGB鼠标 黑色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/52.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）炼狱蝰蛇2000 游戏鼠标 黑色版 电竞鼠标</p>
+								<p class="bos3">¥199.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/53.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇 Razer 太攀皇蛇 钻石星辰版 Taipan 有线游戏鼠标 黑色 电竞鼠标</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/54.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G302 电竞游戏鼠标</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/55.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G502 竞技游戏鼠标 RGB炫彩有线支持宏定义编程</p>
+								<p class="bos3">¥399.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/56.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想（Lenovo）SSD固态硬盘 笔记本 台式机通用 M.2 2242 240-256G</p>
+								<p class="bos3">¥739.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/57.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">达尔优（dare-u） G60 牧马人游戏鼠标 四色呼吸灯变换 有线鼠标</p>
+								<p class="bos3">¥108.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/58.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">鼠标垫护腕 立体个性动漫硅胶护腕游戏鼠标垫电脑办公手腕垫</p>
+								<p class="bos3">¥21.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/59.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇(Razer)狂蛇标准版2000DPI左右手通用电脑有线竞技游戏鼠标黑色</p>
+								<p class="bos3">¥165.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/60.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">金士顿(Kingston)系统指定内存 DDR4 2133 8G 笔记本内存</p>
+								<p class="bos3">¥549.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/61.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）金环蛇 Krait 2013版 有线游戏鼠标 黑色 电竞鼠标</p>
+								<p class="bos3">¥199.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/62.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）M546无线鼠标 黑色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/63.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想（Lenovo)SL700 120G SATA3 闪电鲨系列SSD固态硬盘</p>
+								<p class="bos3">¥379.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/64.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">达尔优 EM905 专业级游戏RGB炫光鼠标 黑色 有线鼠标</p>
+								<p class="bos3">¥118.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/65.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">三星(SAMSUNG) 850 EVO 120G SATA3 固态硬盘</p>
+								<p class="bos3">¥469.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/66.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（razer）炼狱蝰蛇电脑游戏鼠标有线2013版电竞鼠标宏设置笔记本鼠标</p>
+								<p class="bos3">¥239.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/67.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G102 竞技游戏鼠标 RGB炫彩有线宏定义编程鼠标</p>
+								<p class="bos3">¥139.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/68.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">微软Xbox One无线手柄 无线适配器支持Windows7 手柄 精英版手柄 控制器 Xbox One</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/69.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（razer）炼狱蝰蛇电脑游戏鼠标有线三色背光电竞鼠标宏设置</p>
+								<p class="bos3">¥165.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/70.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想笔记本电脑 昭阳加固系列R2000S 14.1英寸 高端商务办公本</p>
+								<p class="bos3">¥60000.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/71.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G系列电竞游戏鼠标宏编程有线发光笔记本台式电脑</p>
+								<p class="bos3">¥139.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/72.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">浦科特 M7VC 256G SATA3固态硬盘</p>
+								<p class="bos3">¥689.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/73.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech） M545 无线鼠标 黑色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/74.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">钛度(Taidu)TSG301B电竞者标准版 镜面外壳 RGB游戏鼠标 白色</p>
+								<p class="bos3">¥149.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/75.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">联想(Lenovo)拯救者R720 15.6英寸游戏笔记本电脑(i5-7300HQ 8G 1T+128G SSD GTX1050Ti 4G IPS)</p>
+								<p class="bos3">¥6299.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/76.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）ABYSSUS狂蛇型号 白色版 有线游戏鼠标 白色 电竞鼠标</p>
+								<p class="bos3">¥129.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/77.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）G102/G502系列游戏鼠标有线电竞游戏鼠标 可编辑宏设置 G102黑色鼠标 宏编程</p>
+								<p class="bos3">¥139.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/78.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">logitech/罗技G502有线游戏鼠标LOL/RPG专业竞技可编程RGB炫彩鼠标 罗技G402</p>
+								<p class="bos3">¥205.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/79.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">SONY（索尼）PS4 slim/Pro 正版游戏光盘 使命召唤13港版中文</p>
+								<p class="bos3">¥159.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/80.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">logitech/罗技G502游戏鼠标LOL英雄联盟竞技可编程RGB炫彩有线游戏鼠</p>
+								<p class="bos3">¥123.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/81.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer） DeathAdder蝰蛇守望先锋有线游戏鼠标RGB幻彩炼狱蝰</p>
+								<p class="bos3">¥179.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/82.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">神舟（HASEE）战神Z7-KP7GT 15.6英寸游戏本笔记本电脑(i7-7700HQ </p>
+								<p class="bos3">¥7299.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/83.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇 炼狱蝰蛇2000/2013/3500/RGB幻彩版有线游戏鼠标 宏定义可编程电</p>
+								<p class="bos3">¥145.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/84.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">华硕（ASUS）GX800VH玩家国度ROG游戏笔记本18.4英寸水冷游戏本</p>
+								<p class="bos3">¥69999.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/85.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">剑圣一族L10有线个性游戏鼠标 宏编程金属 lol逆战cf守望先锋牧马人风格</p>
+								<p class="bos3">¥168.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/86.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）M275 无线鼠标 黑色</p>
+								<p class="bos3">¥85.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/87.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">美女3D胸部护腕鼠标垫 电脑办公加厚创意手托腕垫 宅男 包邮 南宫问天</p>
+								<p class="bos3">¥21.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/88.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">火银狐 牧马人机械鼠标RGB炫光LOL守望先锋专业CF竞技游戏鼠标有线</p>
+								<p class="bos3">¥39.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/89.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">麦多多 type-c快充数据线 适用小米5/5s4c华为p9p10荣耀8乐视2手机充电线器 枪黑色1米</p>
+								<p class="bos3">¥57.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/90.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">微软（Microsoft）Designer 蓝牙鼠标</p>
+								<p class="bos3">¥169.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/91.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">沃野牧马人USB无声静音台式电脑笔记本发光 lol cf 鼠标</p>
+								<p class="bos3">¥39.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/92.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer）Mamba曼巴眼镜蛇5G 幻彩灯光 电竞有线无线游戏鼠标 黑色</p>
+								<p class="bos3">¥599.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/93.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">鼠标垫护腕 慢回弹带护腕鼠标垫电脑办公加厚创意个性手腕垫 包邮</p>
+								<p class="bos3">¥30.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/94.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">雷蛇（Razer） 炼狱蝰蛇精英版电竞游戏鼠标16000DPI</p>
+								<p class="bos3">¥359.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/95.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">双飞燕（A4TECH) N-810FX 有线鼠标 办公鼠标 笔记本鼠标</p>
+								<p class="bos3">¥49.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/96.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">达尔优（dare-u）LM120G 牧马人系列无线光学鼠标 无线鼠标</p>
+								<p class="bos3">¥79.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/97.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">酷奇 显示器高清防刮防蓝光14 13.3 15.6英寸笔记本电脑保护贴膜</p>
+								<p class="bos3">¥26.90</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/98.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技（Logitech）M185 无线鼠标 黑色灰边</p>
+								<p class="bos3">¥52.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/99.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">鼠标垫护腕 美女胸部臀部护手3D立体可爱硅胶护腕送男友宅男 包邮 古河渚</p>
+								<p class="bos3">¥21.00</p>
+							</div>
+							</a>
+						</li>
+						<li>
+							<a href="" class="bos">
+							<img src="img/bo/100.jpg" alt="">
+							<div class="bos1">
+								<p class="bos2">罗技G502炫光自适应RGB游戏鼠标 宏定义编程LOL发光鼠标</p>
+								<p class="bos3">¥399.00</p>
+							</div>
+							</a>
+						</li>
+					</ul></div>
+				<div class="bom">
+					<div class="bom1">
+						<div class="bom1-1">
+							<ul class="bom1-2">
+								<li class="bom1-3">
+									<div class="bom1-4">
+										<h5 class="bom1-5"></h5>
+										<p class="bom1-6">品类齐全，轻松购物</p>
+									</div>
+								</li>
+								<li class="bom1-3">
+									<div class="bom1-4">
+										<h5 class="bom2-5"></h5>
+										<p class="bom1-6">多仓直发，极速配送</p>
+									</div>
+								</li>
+								<li class="bom1-3">
+									<div class="bom1-4">
+										<h5 class="bom3-5"></h5>
+										<p class="bom1-6">正品行货，精致服务</p>
+									</div>
+								</li>
+								<li class="bom1-3">
+									<div class="bom1-4">
+										<h5 class="bom4-5"></h5>
+										<p class="bom1-6">天天低价，畅选无忧</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="bom2">
+						<div class="bom2-1">
+							<div class="bom2-2">
+								<div class="jt">
+									<h5 class="jth">购物指南</h5>
+									<ul class="jtu">
+										<li><a href="" class="jta">购物流程</a></li>
+										<li><a href="" class="jta">会员介绍</a></li>
+										<li><a href="" class="jta">生活旅行</a></li>
+										<li><a href="" class="jta">常见问题</a></li>
+										<li><a href="" class="jta">大家电</a></li>
+										<li><a href="" class="jta">联系客服</a></li>
+									</ul>
+								</div>
+								<div class="jt">
+									<h5 class="jth">配送方式</h5>
+									<ul class="jtu">
+										<li><a href="" class="jta">上门自提</a></li>
+										<li><a href="" class="jta">211限时达</a></li>
+										<li><a href="" class="jta">配送服务查询</a></li>
+										<li><a href="" class="jta">海外配送</a></li>
+									</ul>
+								</div>
+								<div class="jt">
+									<h5 class="jth">支付方式</h5>
+									<ul class="jtu">
+										<li><a href="" class="jta">货到付款</a></li>           
+										<li><a href="" class="jta">在线支付</a></li>
+										<li><a href="" class="jta">分期付款</a></li>
+										<li><a href="" class="jta">邮局汇款</a></li>
+										<li><a href="" class="jta">公司转账</a></li>
+									</ul>
+								</div>
+								<div class="jt">
+									<h5 class="jth">售后服务</h5>
+									<ul class="jtu">
+										<li><a href="" class="jta">售后政策</a></li>           
+										<li><a href="" class="jta">价格保护</a></li>
+										<li><a href="" class="jta">退款说明</a></li>                  
+										<li><a href="" class="jta">返修/退换货</a></li>
+										<li><a href="" class="jta">取消订单</a></li>
+									</ul>
+								</div>
+								<div class="jt">
+									<h5 class="jth">特色服务</h5>
+									<ul class="jtu">
+										<li><a href="" class="jta">夺宝岛</a></li>           
+										<li><a href="" class="jta">DIY装机</a></li>   
+										<li><a href="" class="jta">延保服务</a></li>                  
+										<li><a href="" class="jta">京东E卡</a></li>
+										<li><a href="" class="jta">京东通信</a></li>
+										<li><a href="" class="jta">京东JD</a></li>
+									</ul>
+								</div>
+								<div class="jm">
+									<h5 class="jth">京东自营覆盖区县</h5>
+									<div class="jm1">              
+										<p class="jm2">京东已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务.</p>
+									</div>
+										<p class="jm3">查看详情></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bsb">
+					<div class="bsx">
+						<p class="xbx">
+                        <a href="" class="moa">联系我们</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">联系客服</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">合作招商</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">商家帮助</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">营销中心</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">手机京东</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">友情链接</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">销售联盟</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">京东社区</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">风险监测</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">隐私政策</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">京东公益</a>
+                        <span class="mos">|</span>
+                      	<a href="" class="moa">English Site</a>
+                        <span class="mos">|</span>
+                        <a href="" class="moa">Media & IR</a>
+						</p>
+					<div class="xsx">
+						<p class="lss">
+							<a href="" class="lsa">京公网安备 11000002000088号</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">京ICP证070359号</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">新出发京零 字第大120007号</a>      
+						</p>
+						<p class="lss">
+							<a href="" class="lsa">互联网出版许可证编号新出网证(京)字150号</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">出版物经营许可证</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">网络文化经营许可证京网文[2014]2148-348号</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">违法和不良信息举报电话：4006561155</a>
+						</p>
+						<p class="lss">
+							<a href="" class="lsa">Copyright © 2004 - 2017  京东JD.com 版权所有</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">消费者维权热线：4006067733</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">经营证照</a>
+						</p>     
+						<p class="lss">
+							<a href="" class="lsa">京东旗下网站：京东支付</a>
+							<span class="mos">|</span>
+							<a href="" class="lsa">京东云</a> 
+						</p> 
+						</div>
+						<div class="over">
+							<a href="" class="ov1">经营性网站备案中心</a>
+							<a href="" class="ov2">可信网站信用评估</a>
+							<a href="" class="ov3">网络警察提醒你</a>
+							<a href="" class="ov4">诚信网站</a>
+							<a href="" class="ov5">中国互联网举报中心</a>
+							<a href="" class="ov6">网络举报APP下载</a>
+						</div>
+					</div>
+
+
+				</div>
+				</div>
+				
+			</div>
+				
+		</div>
+	</div>
+
+
+		
+</body>
+</html>
+
+
+
+
+
+
